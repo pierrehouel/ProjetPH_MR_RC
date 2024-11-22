@@ -1,4 +1,4 @@
-<?php include 'databse.php';?>
+<?php include 'database.php';?>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,7 @@
         
     </body>
 
-    <script type="text/html" src="Page.html"></script>
+    <script type="text/html" src="index.php"></script>
 
 
 
