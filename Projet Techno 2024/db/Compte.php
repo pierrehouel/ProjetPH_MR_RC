@@ -21,7 +21,7 @@
                 <input type="password" placeholder="Confirmer Mot de passe">
             </div>
             <div align="center">
-                <button type="submit" ><a href="Connexion.html"><?php echo "Création compte"?></a></button>
+                <button type="submit" ><a href="Connexion.php"><?php echo "Création compte"?></a></button>
             </div>
 
         </form>
