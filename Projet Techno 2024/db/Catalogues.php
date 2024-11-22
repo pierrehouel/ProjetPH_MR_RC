@@ -29,7 +29,7 @@
         
     </body>
 
-    <script type="text/html" src="Page.html"></script>
+    <script type="text/html" src="Page.php"></script>
 
 
 
