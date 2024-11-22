@@ -17,7 +17,7 @@
 </head>
 <body>
     <ul class="navbar">
-        <li class="active"><a href="Page.html"><?php echo "Retour"?></a></li>
+        <li class="active"><a href="Page.php"><?php echo "Retour"?></a></li>
     </ul>
 
     <div id="container">
