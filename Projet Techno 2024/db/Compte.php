@@ -5,7 +5,7 @@
     <head>
         <title><?php echo "Connexion"?></title>
         <link rel="stylesheet" href="Style.css">
-        <link rel="stylesheet" href="Page.html">
+        <link rel="stylesheet" href="index.php">
     
     </head>
     <body>

@@ -5,7 +5,7 @@
 <head>
 
     <link rel="stylesheet" href="page.css">
-    <link rel="stylesheet" href="Page.html">
+    <link rel="stylesheet" href="index.php">
     <link rel="stylesheet" href="index.js">
     <link rel="stylesheet" href="connexion.php">
     <link rel="icon" href="../images/Sommet.png" type="image/x-icon">
