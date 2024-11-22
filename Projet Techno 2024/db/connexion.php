@@ -1,9 +1,9 @@
 
 <?php
 $host = 'localhost'; // adresse du serveur SQL
-$dbname = 'nom_de_la_base'; // nom de la base de données
-$username = 'nom_utilisateur'; // nom d'utilisateur SQL
-$password = 'mot_de_passe'; // mot de passe SQL
+$dbname = 'projettechno_2024'; // nom de la base de données
+$username = '386539'; // nom d'utilisateur SQL
+$password = 'Projet2024'; // mot de passe SQL
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
