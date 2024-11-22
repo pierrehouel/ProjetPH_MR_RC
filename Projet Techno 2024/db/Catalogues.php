@@ -13,7 +13,7 @@
         <div class="content">
         
             <ul class="navbar">
-                <li class="active"><a href="Page.html"><?php echo "Retour"?></a></li>
+                <li class="active"><a href="index.php"><?php echo "Retour"?></a></li>
             </ul>
             <h1><?php echo "Catalogue"?></h1>      
             
@@ -29,7 +29,7 @@
         
     </body>
 
-    <script type="text/html" src="Page.php"></script>
+    <script type="text/php" src="index.php"></script>
 
 
 
