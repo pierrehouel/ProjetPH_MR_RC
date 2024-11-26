@@ -1,14 +1,15 @@
-<?php include 'database.php';?>
-<?php
+<?php include 'database.php';
+
 if (isset($_SESSION['error_message'])) {
     echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
     unset($_SESSION['error_message']);
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo "Connexion"; ?></title>
+    <title>Connexion</title>
     <link rel="icon" href="../images/Sommet.png" type="image/x-icon">
     <link rel="stylesheet" href="Style.css">
 </head>
@@ -27,7 +28,7 @@ if (isset($_SESSION['error_message'])) {
             <?php echo "Je n'ai pas de"; ?> 
             <a href="Compte.php">Compte</a>, <?php echo "je m'en crée un."; ?>
         </p>
-        <div align="center">
+        <div>
             <button type="submit"><?php echo "Se connecter"; ?></button>
         </div>
     </form>

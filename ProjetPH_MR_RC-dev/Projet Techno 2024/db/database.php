@@ -1,10 +1,15 @@
-
-
 <?php
+
 $host = 'mysql-projetwebl2.alwaysdata.net'; // adresse du serveur SQL
 $dbname = 'projettechno_2024'; // nom de la base de données
 $username = '386539_gabriel'; // nom d'utilisateur SQL
 $password = 'Projet2024'; // mot de passe SQL
+
+
+/*$host = 'localhost'; // adresse du serveur SQL
+$dbname = 'projet2024'; // nom de la base de données
+$username = 'gab'; // nom d'utilisateur SQL
+$password = '1234'; // mot de passe SQL*/
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

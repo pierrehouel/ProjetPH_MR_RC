@@ -24,10 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             // Connexion réussie
             $_SESSION['user'] = $user;
-            $_SESSION['userRoleId'] = $user['userRoleId']; 
-            header("Location: index.php"); // Rediriger vers la page principale
+            //$_SESSION['userRoleId'] = $user['userRoleId']; 
+
+            $entier = $user['userRoleId'];
+            $securite = "akunamatata";
+            $entier_chiffre = base64_encode(openssl_encrypt($entier, 'AES-128-ECB', $securite));
+
+            header("Location: index.php?role=$entier_chiffre"); // Rediriger vers la page principale
             exit;
-        } else {
+        } else {    //le mot de passe est incorrect !
           
             header("Location: connexion.php"); // Rediriger à nouveau vers la page de connexion
             $_SESSION['error_message'] = "Mot de passe incorrect.";

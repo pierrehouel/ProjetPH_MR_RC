@@ -1,14 +1,18 @@
-<?php include 'database.php'; ?>
+<?php include 'database.php';?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo "Création de compte"; ?></title>
+        <title>Création de compte</title>
         <link rel="stylesheet" href="Style.css">
+        <link rel="icon" href="../images/Sommet.png" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
         <form action="traitement_creation_compte.php" method="POST">
-            <h1><?php echo "Création de compte"; ?></h1>
+            <h1>Création de compte</h1>
             <div class="inputs">
                 <label for="firstname">Prénom :</label>
                 <input type="text" name="firstname" id="firstname" placeholder="Prénom" required>
@@ -29,7 +33,7 @@
                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le mot de passe" required>
             </div>
             <div>
-                <button type="submit"><?php echo "Créer un compte"; ?></button>
+                <button type="submit">Créer un compte</button>
             </div>
         </form>
     </body>

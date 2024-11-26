@@ -9,38 +9,13 @@ body{
 form {
     margin-top: 20px;
     background-color: #fff;
-    flex-direction: column;
     padding: 40px 60px;
     border-radius: 10px;
     min-width: 300px;
-    width: 100%;
 }
 
 form h1{
     color: green;
-    text-align: center;
-
-}
-
-form .social-media{
-    margin-top: -10px ;
-    display: flex;
-    justify-content: center;
-
-}
-
-form .social-media p{
-    padding-left: 5px;
-    margin-left: 10px;
-    border: 1px solid #545454;
-    border-radius: 100%;
-    width: 20px;
-    text-align: center;
-    cursor: pointer;
-
-}
-
-form p.choose-email{
     text-align: center;
 
 }
@@ -51,7 +26,7 @@ form .inputs{
 
 }
 
-form .inputs input[type="email"], input[type="password"], input[type="datenaissance"]{
+input{
     padding: 15px;
     border-radius: 5px;
     border: none;
@@ -60,23 +35,13 @@ form .inputs input[type="email"], input[type="password"], input[type="datenaissa
     outline: none;
 }
 
-form p.inscription{
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #878787;
-}
-
-form p.inscription span{
-    color: #eb7371;
-}
-
 form button{
     padding: 5px 5px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     font-size: 15px;
-    color: #000000;
-    background-color: #ffffff;
-    
-
+    color: black;
+    background-color: lightgrey;
+    text-align: center;
+    cursor: pointer;
 }
