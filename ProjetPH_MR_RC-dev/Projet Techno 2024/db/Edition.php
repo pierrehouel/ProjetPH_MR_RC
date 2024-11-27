@@ -62,7 +62,7 @@ if (isset($_POST['validerImage'])) {
     
     <!-- // liste déroulante pour les catégorie -->
         <?php
-            $query = "SELECT name FROM catalog";
+            $query = "SELECT name FROM Catalog";
             $stmt = $pdo->query($query);
             $catalog = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
@@ -86,10 +86,10 @@ if (isset($_POST['validerImage'])) {
             if (isset($_POST['validerCatalogue']) && $_POST['catalogue'] != "defaut") {
 
                 // Requête pour récupérer les images liées au catalogue choisie
-                $query = "  SELECT image.name AS imgName FROM image
-                            INNER JOIN catalogimage ON image.id = catalogimage.imageId
-                            INNER JOIN catalog ON catalogimage.catalogId = catalog.id
-                            WHERE catalog.name = :catalogue";
+                $query = "  SELECT Image.name AS imgName FROM Image
+                            INNER JOIN CatalogImage ON Image.id = CatalogImage.imageId
+                            INNER JOIN Catalog ON CatalogImage.catalogId = Catalog.id
+                            WHERE Catalog.name = :catalogue";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute(['catalogue' => $CatalogueChoisie]);
                 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -122,14 +122,18 @@ if (isset($_POST['validerImage'])) {
         if (isset($_POST['validerImage']) && $_POST['image'] != "defaut") {
 
             // Requête pour récupérer l'emplacement ou est sauvegardé l'image
-            $query = "  SELECT bank.name AS bkName FROM bank
-                        INNER JOIN image ON bank.id = image.bankId
-                        WHERE image.name= '". $ImageChoisie."'";
+            $query = "  SELECT Bank.name AS bkName FROM Bank
+                        INNER JOIN Image ON Bank.id = Image.bankId
+                        WHERE Image.name= '". $ImageChoisie."'";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             $bank = $stmt->fetch(PDO::FETCH_ASSOC);
             echo "<div class='image-container'>";
-            echo '<img id="dynamic-image" src="../images/'.$bank['bkName'].'/'.$ImageChoisie.'"/>';
+            
+            echo '<canvas id="myCanvas" width="800" height="600">';
+            echo '<img id="dynamic-image" src="../images/'.$bank['bkName'].'/'.$ImageChoisie.'"/></canvas>';
+
+
             echo "</div>";
             
         }else if (isset($_POST['validerImage']) && $_POST['image'] == "defaut"){
