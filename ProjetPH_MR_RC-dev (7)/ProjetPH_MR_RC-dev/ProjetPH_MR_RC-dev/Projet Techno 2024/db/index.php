@@ -6,10 +6,10 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+$securite = "akunamatata";
 
 //on récupère le role de l'utilisateur connecté
 if (isset($_GET['role'])) {
-    $securite = "akunamatata";
     $donnee_chiffree = $_GET['role'];
     $entier = openssl_decrypt(base64_decode($donnee_chiffree), 'AES-128-ECB', $securite);
     if ($entier == 1){
