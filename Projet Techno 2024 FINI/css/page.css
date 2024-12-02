@@ -15,6 +15,11 @@ table {
   /* border-collapse: collapse; */
 }
 
+.presentation{
+  border: solid 1px black;
+  padding: 10px;
+}
+
 td {
   border-width: 1px;
   border-style: solid;
@@ -271,4 +276,27 @@ height: auto; /* Garde les proportions */
 
 .form{
   margin-top: 20px;
+}
+
+.navbar-bas{
+  position: absolute;
+  bottom: 0px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(233, 233, 233);
+  left: 0; /* pour éviter le petit décalage de la barre de navigation sur la gauche */
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }

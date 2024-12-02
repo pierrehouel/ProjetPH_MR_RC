@@ -57,11 +57,12 @@
     <head>
         <title>Accueil</title>
         <link rel="stylesheet" href="css/page.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     </head>
 
 <body>
     <ul class="navbar">
-        <li class="active"><a>Projet</a></li>
+        <li class="active"><a>Sommet</a></li>
         <li class="left"><a href="<?php echo $lienC; ?>">Catalogue</a></li>
         <li class="right"><a href="<?php echo $lienE; ?>">Édition</a></li>
         <li class="right"><a href="<?php echo $lienV; ?>">Visualiser</a></li>
@@ -70,9 +71,15 @@
     </ul>
 
     <div class="content">
-        <p class="invisible">l'utilisateur est: <?php echo $role;?></p>
+        <p class="">l'utilisateur est: <?php echo $role;?></p>
         <p class="invisible">l'utilisateur ID est: <?php echo $idE;?></p>
     </div>
+    <h1>Bonjour !</h1>
+    <p class="presentation"> Ce projet porte sur le développement d’un outil nommé SOMMETS pour le catalogage et
+        l'étiquetage d’images. La principale fonctionnalité de cet outil est de permettre à un éditeur
+        d'étiqueter des régions d’intérêt d’une image et d’associer à chaque étiquette une description
+        en format HTML.
+    </p>
 
     
     <?php
@@ -134,5 +141,9 @@
             echo "Veuillez selectionner un catalogue !";
         }
     ?>
+
+    <ul class="navbar-bas">
+        <p>Sommet</p>
+    </ul>
 </body>
 </html>

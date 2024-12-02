@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 // Vérifier si la connexion à la base de données est valide
 if (!$pdo) {
     $_SESSION['error_message'] = "Erreur de connexion à la base de données.";
-    header("Location: Compte.php");
+    header("Location: Inscription.php");
     exit;
 }
 
@@ -24,7 +24,7 @@ $confirm_password = $_POST['confirm_password'];
 // Vérification des mots de passe
 if ($password !== $confirm_password) {
     $_SESSION['error_message'] = "Les mots de passe ne correspondent pas.";
-    header("Location: Compte.php");
+    header("Location: Inscription.php");
     exit;
 }
 
@@ -37,7 +37,7 @@ $result = $stmt_check->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($result) > 0) {
     $_SESSION['error_message'] = "L'identifiant ou l'email existe déjà.";
-    header("Location: Compte.php");
+    header("Location: Inscription.php");
     exit;
 }
 $stmt_check->closeCursor();
@@ -58,11 +58,10 @@ $stmt->bindParam(5, $email, PDO::PARAM_STR);
 $stmt->bindParam(6, $hashed_password, PDO::PARAM_STR);
 
 if ($stmt->execute()) {
-    $_SESSION['success_message'] = "Compte créé avec succès ! Connectez-vous.";
     header("Location: connexion.php");
 } else {
     $_SESSION['error_message'] = "Erreur lors de la création du compte.";
-    header("Location: Compte.php");
+    header("Location: Inscription.php");
 }
 
 $stmt->closeCursor();
