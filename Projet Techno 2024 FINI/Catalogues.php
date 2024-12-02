@@ -53,8 +53,10 @@ $catalogueChoisi = null;
             <h1>Créer un Catalogue</h1>      
 
                 <form method="POST">
-                <label for="input-text">Nom nouveau catalogue :</label>
-                <input type="text" id="input-text" name="user_input" required>
+                <label for="input-text">Nom nouveau catalogue :</label><br>
+                <input type="text" id="input-text" name="user_input" required><br>
+                <br>
+                <textarea name="description" rows="5" cols="30" placeholder="Description" required></textarea>
                 <button type="submit" name="Creer">Créer</button>
                 </form>
                 
@@ -63,23 +65,24 @@ $catalogueChoisi = null;
                 if (isset($_POST["Creer"])) {
                 // Récupération de la donnée saisie
                 $userInput = $_POST['user_input'];
+                $description = $_POST['description'];
 
                 // Vérification que la donnée n'est pas vide
                 if (!empty($userInput)) {
-                    $defautDescr = "test";
                     try {
                         // Préparation de la requête SQL
-                        $stmt = $pdo->prepare("INSERT INTO Catalog (userAccoundId,name,description) VALUES (:user_Id,:user_input,'1234')");
+                        $stmt = $pdo->prepare("INSERT INTO Catalog (userAccoundId,name,description) VALUES (:user_Id,:user_input,:description)");
                         $stmt->bindParam(':user_Id', $idE);
                         $stmt->bindParam(':user_input', $userInput);
+                        $stmt->bindParam(':description', $description);
                         $stmt->execute();
                         
-                        $stmt = $pdo->prepare("INSERT INTO Bank (dir,name,description) VALUES (:user_input,:user_input,'1234')");
+                        $stmt = $pdo->prepare("INSERT INTO Bank (dir,name,description) VALUES (:user_input,:user_input,:description)");
                         $stmt->bindParam(':user_input', $userInput);
-                        
-
-                        // Exécution de la requête
+                        $stmt->bindParam(':description', $description);
                         $stmt->execute();
+
+                       
 
                         // Chemin du dossier à créer
                         $chemin = "Images/$userInput";
@@ -199,7 +202,7 @@ $catalogueChoisi = null;
                         }
 
                         if ($stmt->execute()) {
-                            echo "Le catalogue a été supprimé avec succès et les données associées ont été supprimées de la base de données.";
+                            echo "<p>Le catalogue a été supprimé avec succès et les données associées ont été supprimées de la base de données.</p>";
                         } else {
                             echo "Erreur lors de la suppression.";
                         }
